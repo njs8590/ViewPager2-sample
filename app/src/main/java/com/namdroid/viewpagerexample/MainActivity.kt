@@ -1,9 +1,12 @@
 package com.namdroid.viewpagerexample
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import androidx.viewpager.widget.ViewPager
+import com.namdroid.viewpagerexample.fragment.FragmentPagerActivity
 import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -12,18 +15,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var modelList = ArrayList<MyPagerViewModel>()
-        modelList.add(MyPagerViewModel(R.drawable.bear, "안녕하세요 !"))
-        modelList.add(MyPagerViewModel(R.drawable.cat, "행복하세요 !"))
-        modelList.add(MyPagerViewModel(R.drawable.bull, "건강하세요 !"))
+        var btn_view = findViewById<Button>(R.id.btn_view)
+        var btn_fragment = findViewById<Button>(R.id.btn_fragment)
 
-        var myPagerAdapter = MyPagerAdapter(modelList)
+        btn_view.setOnClickListener{
+            val intent = Intent(this@MainActivity, PagerActivity::class.java)
+            startActivity(intent)
+        }
 
-        val wormDotsIndicator = findViewById<WormDotsIndicator>(R.id.worm_dots_indicator)
-
-        myviewpager.apply{
-            adapter = myPagerAdapter
-            wormDotsIndicator.setViewPager2(this)
+        btn_fragment.setOnClickListener{
+            val intent = Intent(this@MainActivity, FragmentPagerActivity::class.java)
+            startActivity(intent)
         }
 
     }

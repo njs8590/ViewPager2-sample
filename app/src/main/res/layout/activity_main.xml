@@ -7,37 +7,24 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <androidx.viewpager2.widget.ViewPager2
+    <Button
+        android:layout_margin="30dp"
+        android:id="@+id/btn_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/myviewpager"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:text="view"
         >
+    </Button>
 
-    </androidx.viewpager2.widget.ViewPager2>
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="10"
+    <Button
+        android:layout_margin="30dp"
+        android:id="@+id/btn_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:text="fragment"
         >
-
-        <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
-            android:id="@+id/worm_dots_indicator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="10"
-            app:dotsColor="#03A9F4"
-            app:dotsStrokeColor="#2196F3"
-            app:dotsCornerRadius="8dp"
-            app:dotsSize="16dp"
-            app:dotsSpacing="4dp"
-            app:dotsStrokeWidth="2dp"
-            />
-
-    </RelativeLayout>
+    </Button>
 
 </LinearLayout>
